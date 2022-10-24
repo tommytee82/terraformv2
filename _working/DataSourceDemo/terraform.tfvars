@@ -1,0 +1,5 @@
+subname  = "subnet01"
+vnetname = "vnet01"
+rgname   = "thorntestdatasource"
+adminpw  = "#123#123!halo"
+location = "ukwest"
