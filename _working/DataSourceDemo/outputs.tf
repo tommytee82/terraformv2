@@ -7,3 +7,10 @@ output "vm_ip" {
   value       = module.vm.vm_ip_out
   description = "The private IP Address for the new VM"
 }
+
+output "vnet_name" {
+  value = data.azurerm_subnet.test.virtual_network_name
+}
+output "subnet_name" {
+  value = data.azurerm_subnet.test.name
+}

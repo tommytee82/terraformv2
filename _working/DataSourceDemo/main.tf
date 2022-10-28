@@ -9,6 +9,14 @@ terraform {
   required_version = ">= 1.1.0"
 }
 
+backend "azurerm" {
+        resource_group_name  = "thorn-tfstate123-rg"
+        storage_account_name = "tfstate1723918020"
+        container_name       = "tfstate"
+        key                  = "terraform.tfstate"
+    }
+
+
 provider "azurerm" {
   features {
     virtual_machine {
@@ -20,15 +28,20 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "test" {
   name     = "thorntestdatasource"
+  location = "ukwest"
 
+provisioner "local-exec" {
+  command     = "Get-Date > completed.txt"
+  interpreter = ["PowerShell", "-Command"]
+}
 }
 
 data "azurerm_subnet" "test" {
   resource_group_name  = var.rgname
   virtual_network_name = var.vnetname
   name                 = var.subname
-
 }
+
 
 
 module "vm" {
@@ -53,3 +66,4 @@ module "Network" {
   dns_servers      = ["10.0.0.4"]
   address_prefixes = ["10.0.1.0/24"]
 }
+
