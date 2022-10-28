@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  default = "thorn-terraformtest-rg"
+  default = "thorn-terraformtest_new-rg"
 }
 
 variable "subnet_name" {

@@ -7,14 +7,12 @@ terraform {
     }
   }
   cloud {
-    
     organization = "tommer82"
   
     workspaces{
       name = "example-workstation"
     }
   }
-
 
     # backend "azurerm"  {
     #     resource_group_name  = "thorn-tfstate-rg"
@@ -24,8 +22,6 @@ terraform {
     #     access_key           = "Ez3cTU0VcDs2bbML03sxMr/z3z10U15z8mYZXsU1OCzuhqeplR4Uk05kWdABqUc8/IROlQXjJNHR+AStfOOS+g=="
 
     # }
-
-
 
   required_version = ">= 1.1.0"
 }
@@ -44,7 +40,6 @@ provider "azurerm" {
 resource "azurerm_resource_group" "test" {
   name     = var.resource_group_name
   location = "ukwest"
-
 }
 
 resource "azurerm_virtual_network" "test" {
