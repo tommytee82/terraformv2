@@ -1,6 +1,5 @@
 ## Two Modules, one for RG and one for SA.
 ## Rand used
-
 terraform {
   required_providers {
     azurerm = {
