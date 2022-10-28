@@ -35,7 +35,6 @@ module "Network" {
     subnet_name   = "thornterra01"
 }
 
-
 module "StorageAccount" {
     stgact_name   = "thornterratest"
     source        = "./Modules/StorageAccount"
